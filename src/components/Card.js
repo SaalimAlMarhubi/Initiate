@@ -6,7 +6,6 @@ function Card(props) {
   return (
     <div className="pl-3 w-80 pb-5">
       <div className="flex bg-white">
-        {/* {staffMember} */}
         <img
           src={StaffPhoto}
           alt="Staff Profile"
@@ -32,14 +31,6 @@ function Card(props) {
           </svg>
         </div>
       </div>
-
-      {/* <div className="bg-white shadow-2xl w-full">
-        <img
-          src={StaffPhoto}
-          alt="Staff Profile"
-          className="h-60 w-full  object-cover"
-        />
-      </div> */}
     </div>
   );
 }

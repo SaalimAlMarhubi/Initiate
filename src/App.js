@@ -47,8 +47,6 @@ function App() {
     }
   }, [search]);
 
-  // let visibleMembers = data.length;
-
   return (
     <div className="App bg-gray-100">
       <Nav />
@@ -85,15 +83,6 @@ function App() {
               return search == ""
                 ? val
                 : val.name.toLowerCase().includes(search.toLowerCase());
-              // if (search == "") {
-              //   setVisibleMembers(20);
-              //   return val;
-              // } else {
-              //   if (val.name.toLowerCase().includes(search.toLowerCase())) {
-              //     setVisibleMembers();
-              //     return;
-              //   }
-              // }
             })
             .map((staffMember) => {
               return <Card staffMember={staffMember} />;
