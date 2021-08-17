@@ -10,16 +10,16 @@ function App() {
 
   const [search, setSearch] = useState("");
 
+  const [visibleMembers, setVisibleMembers] = useState(0);
+
   const handleSearch = (event) => {
+    console.log(visibleMembers);
+
     setSearch(event.target.value);
-    return (visibleMembers = data.filter((val) => {
-      return search == ""
-        ? val
-        : val.name.toLowerCase().includes(search.toLowerCase());
-    }).length);
+    console.log(visibleMembers);
   };
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,13 +28,26 @@ function App() {
       );
       response = await response.json();
       setData(response);
-      setLoading(true);
+      setLoading(false);
+      setVisibleMembers(response.length);
     };
 
     fetchData();
   }, []);
 
-  let visibleMembers = data.length;
+  useEffect(() => {
+    if (!loading) {
+      setVisibleMembers(
+        data.filter((val) => {
+          return search == ""
+            ? val
+            : val.name.toLowerCase().includes(search.toLowerCase());
+        }).length
+      );
+    }
+  }, [search]);
+
+  // let visibleMembers = data.length;
 
   return (
     <div className="App bg-gray-100">
@@ -65,16 +78,27 @@ function App() {
         </h1>
       </div>
 
-      {loading &&
-        data
-          .filter((val) => {
-            return search == ""
-              ? val
-              : val.name.toLowerCase().includes(search.toLowerCase());
-          })
-          .map((staffMember) => {
-            return <Card staffMember={staffMember} />;
-          })}
+      <div className="flex flex-wrap mx-auto max-w-5xl">
+        {!loading &&
+          data
+            .filter((val) => {
+              return search == ""
+                ? val
+                : val.name.toLowerCase().includes(search.toLowerCase());
+              // if (search == "") {
+              //   setVisibleMembers(20);
+              //   return val;
+              // } else {
+              //   if (val.name.toLowerCase().includes(search.toLowerCase())) {
+              //     setVisibleMembers();
+              //     return;
+              //   }
+              // }
+            })
+            .map((staffMember) => {
+              return <Card staffMember={staffMember} />;
+            })}
+      </div>
     </div>
   );
 }

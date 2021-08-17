@@ -3,12 +3,14 @@ import React from "react";
 function Nav() {
   return (
     <div>
-      <nav className="bg-steinNav py-4 px-3 md:border-b-2 lg:border-b-4 xl:border-b-8 border-steinPink">
+      <nav className="bg-steinNav md:border-b-2 lg:border-b-4 xl:border-b-8 border-steinPink">
         <div className="max-w-5xl mx-auto">
-          <div className="hidden md:flex justify-between text-white">
+          <div className="hidden h-10 items-center md:flex justify-between text-white">
             <a href="#">Dashboard</a>
             <a href="#">Our Agency</a>
-            <a href="#">Our Staff</a>
+            <a href="#" className="bg-steinPink items-center">
+              Our Staff
+            </a>
             <a href="#">Locations</a>
             <a href="#">Latest</a>
             <a href="#">Upcoming</a>
