@@ -1,18 +1,20 @@
 import React from "react";
 import StaffPhoto from "../img/Profile@2x.png";
 
-function Cards() {
+function Card(props) {
+  const { staffMember } = props;
   return (
     <div className="pl-3 w-80 pb-5">
       <div className="flex bg-white">
+        {/* {staffMember} */}
         <img
           src={StaffPhoto}
           alt="Staff Profile"
-          className="h-20 w-20 object-right border-r-4 border-staffBlue"
+          className="h-20 w-20 object-fit object-cover border-r-4 border-staffBlue"
         />
         <div>
-          <h2 className="font-semibold">Freddy Patterson</h2>
-          <h3>Account Manager</h3>
+          <h2 className="font-semibold">{staffMember.name}</h2>
+          <h3>{staffMember.jobTitle}</h3>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,16 +33,15 @@ function Cards() {
         </div>
       </div>
 
-      {/* Vertical Card */}
-      <div className="bg-white shadow-2xl w-full">
+      {/* <div className="bg-white shadow-2xl w-full">
         <img
           src={StaffPhoto}
           alt="Staff Profile"
           className="h-60 w-full  object-cover"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default Cards;
+export default Card;
