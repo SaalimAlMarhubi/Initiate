@@ -9,6 +9,13 @@ module.exports = {
         steinTeal: "#82C5B2",
         staffBlue: "#0CA9E0",
       },
+      gridTemplateColumns: {
+        cardWrapper: "repeat(auto-fit, minmax(13rem, 1fr))",
+        cardCols: "1fr 3fr",
+      },
+      gridTemplateRows: {
+        cardRows: "3fr 1fr",
+      },
     },
   },
   variants: {

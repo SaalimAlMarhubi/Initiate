@@ -76,7 +76,7 @@ function App() {
         </h1>
       </div>
 
-      <div className="flex flex-wrap mx-auto max-w-5xl">
+      <div className="flex flex-wrap md:grid md:grid-cols-cardWrapper md:gap-5 pl-3 pb-5 gap-5 mx-auto max-w-5xl">
         {!loading &&
           data
             .filter((val) => {

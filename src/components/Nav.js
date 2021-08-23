@@ -3,12 +3,12 @@ import React from "react";
 function Nav() {
   return (
     <div>
-      <nav className="bg-steinNav md:border-b-2 lg:border-b-4 xl:border-b-8 border-steinPink">
+      <nav className="bg-steinNav md:border-b-2 p-3 md:p-0 lg:border-b-4 xl:border-b-8 border-steinPink">
         <div className="max-w-5xl mx-auto">
           <div className="hidden h-10 items-center md:flex justify-between text-white">
             <a href="#">Dashboard</a>
             <a href="#">Our Agency</a>
-            <a href="#" className="bg-steinPink items-center">
+            <a href="#" className="bg-steinPink items-center py-4 px-4">
               Our Staff
             </a>
             <a href="#">Locations</a>
